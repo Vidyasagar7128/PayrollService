@@ -21,9 +21,20 @@ namespace PayrollService
                 Console.WriteLine($"{d.id} {d.Name} {d.Salary}");
             }
         }
-        public void Menu()
+        /// <summary>
+        /// Add Data
+        /// </summary>
+        public void AddData()
         {
-            Console.WriteLine("1.Show Records 0.Exit");
+            RestRequest req = new RestRequest("/profile/");
+            req.AddHeader("Content-Type", "application/json");
+            req.AddJsonBody(new User() { Name = "John Doe", Salary = 27000 });
+            IRestResponse response = client.Post<User>(req);
+            Console.WriteLine($"Code: {response.StatusCode}");
+        }
+        public void Menus()
+        {
+            Console.WriteLine("1.Show Records 2.Add Data 0.Exit");
             bool again = true;
             while (again)
             {
@@ -32,7 +43,11 @@ namespace PayrollService
                 {
                     case 1:
                         ShowData();
-                        Menu();
+                        Menus();
+                        break;
+                    case 2:
+                        AddData();
+                        Menus();
                         break;
                     case 0:
                         Console.WriteLine("Exit");

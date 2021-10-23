@@ -25,7 +25,7 @@ namespace PayrollService
                     break;
                 case 2:
                     JsonUser jsonUser = new JsonUser();
-                    jsonUser.Menu();
+                    jsonUser.Menus();
                     Menu();
                     break;
             }
