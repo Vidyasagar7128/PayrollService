@@ -32,9 +32,26 @@ namespace PayrollService
             IRestResponse response = client.Post<User>(req);
             Console.WriteLine($"Code: {response.StatusCode}");
         }
+        /// <summary>
+        /// Update User Data using Id
+        /// </summary>
+        public void UpdateSalary()
+        {
+            Console.Write("Id: ");
+            int uId = int.Parse(Console.ReadLine());
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            Console.Write("Salary: ");
+            double salary = double.Parse(Console.ReadLine());
+            RestRequest req = new RestRequest($"/profile/{uId}");
+            req.AddHeader("Content-Type", "application/json");
+            req.AddJsonBody(new User() { Name = name, Salary = salary } );
+            IRestResponse response = client.Put<User>(req);
+            Console.WriteLine($"Code: {response.StatusCode}");
+        }
         public void Menus()
         {
-            Console.WriteLine("1.Show Records 2.Add Data 0.Exit");
+            Console.WriteLine("1.Show Records 2.Add Data 3.Update Data 0.Exit");
             bool again = true;
             while (again)
             {
@@ -47,6 +64,10 @@ namespace PayrollService
                         break;
                     case 2:
                         AddData();
+                        Menus();
+                        break;
+                    case 3:
+                        UpdateSalary();
                         Menus();
                         break;
                     case 0:
