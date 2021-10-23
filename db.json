@@ -1,0 +1,78 @@
+{
+  "languages": [
+    {
+      "id": 1,
+      "name": "Java",
+      "author": "James Gosling"
+    },
+    {
+      "id": 2,
+      "name": "Python",
+      "author": "Guido van Rossum"
+    },
+    {
+      "id": 3,
+      "name": "C#",
+      "author": "Anders Hejlsberg (Microsoft)"
+    },
+    {
+      "id": 4,
+      "name": "Dart",
+      "author": "Lars Bak and Kasper Lund (Google)"
+    },
+    {
+      "id": 5,
+      "name": "Shell Script Programming",
+      "author": "Linux by Linus Torawaldus"
+    }
+  ],
+  "frameworks": [
+    {
+      "rank": 1,
+      "name": "Spring Boot",
+      "author": "James Gosling"
+    },
+    {
+      "rank": 2,
+      "name": "DJango",
+      "author": "Guido van Rossum"
+    },
+    {
+      "rank": 3,
+      "name": ".NET Framework",
+      "author": "Anders Hejlsberg (Microsoft)"
+    },
+    {
+      "rank": 4,
+      "name": "Flutter",
+      "author": "Lars Bak and Kasper Lund (Google)"
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "Name": "Sonu",
+      "Salary": 25000
+    },
+    {
+      "id": 2,
+      "Name": "Manoj",
+      "Salary": 35000
+    },
+    {
+      "id": 3,
+      "Name": "RaJu",
+      "Salary": 55000
+    },
+    {
+      "id": 4,
+      "Name": "Sham",
+      "Salary": 34000
+    },
+    {
+      "id": 5,
+      "Name": "Baburao",
+      "Salary": 30000
+    }
+  ]
+}
