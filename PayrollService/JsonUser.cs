@@ -49,9 +49,21 @@ namespace PayrollService
             IRestResponse response = client.Put<User>(req);
             Console.WriteLine($"Code: {response.StatusCode}");
         }
+        /// <summary>
+        /// Delete data from Json Server
+        /// </summary>
+        public void Deleteuser()
+        {
+            Console.Write("Id: ");
+            int uId = int.Parse(Console.ReadLine());
+            RestRequest restRequest = new RestRequest($"/profile/{uId}");
+            restRequest.AddHeader("Content-Type", "application/json");
+            IRestResponse response = client.Delete(restRequest);
+            Console.WriteLine($"Code: {response.StatusCode}");
+        }
         public void Menus()
         {
-            Console.WriteLine("1.Show Records 2.Add Data 3.Update Data 0.Exit");
+            Console.WriteLine("1.Show Records 2.Add Data 3.Update Data 4.Delete Data 0.Exit");
             bool again = true;
             while (again)
             {
@@ -68,6 +80,10 @@ namespace PayrollService
                         break;
                     case 3:
                         UpdateSalary();
+                        Menus();
+                        break;
+                    case 4:
+                        Deleteuser();
                         Menus();
                         break;
                     case 0:
